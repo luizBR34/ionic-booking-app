@@ -20,6 +20,14 @@ export class PlacesService {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr1aOFsA17CjqioXKOEVvKkpz-jMuH50ZzDx-A_34-2g&s',
       128.0
     ),
+
+    new Place(
+      'p3',
+      'Paris Apartment',
+      'In the heart of Paris',
+      'https://worldinparis.com/wp-content/uploads/2021/03/Apartment-with-Eiffel-Tower-View-Paris.jpg',
+      132.0
+    ),
   ];
 
   get places() {
