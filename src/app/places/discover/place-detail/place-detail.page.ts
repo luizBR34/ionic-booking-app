@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
 import { Place } from '../../place.model';
 import { PlacesService } from '../../places.service';
-import { CreateBookingComponent } from 'src/app/bookings/create-booking/create-booking.component';
+import { CreateBookingComponent } from '../../../bookings/create-booking/create-booking.component';
 
 @Component({
   selector: 'app-place-detail',
@@ -25,18 +25,18 @@ export class PlaceDetailPage implements OnInit {
         this.navCtrl.navigateBack('/places/tabs/discover');
         return;
       }
-      this.place = this.placeService.getPlace(
-        JSON.stringify(paramMap.get('placeId'))
-      );
+      this.place = this.placeService.getPlace(paramMap.get('placeId')!);
     });
   }
 
   onBookPlace() {
     //this.router.navigateByUrl('/places/tabs/discover');
     //this.navCtrl.navigateBack('/places/tabs/discover');
+    //ModalController permite abrir uma modal
     this.modalCtrl
       .create({
         component: CreateBookingComponent,
+        //componentProps: permite passar dados para a modal
         componentProps: {
           selectedPlace: this.place,
           id: 1,

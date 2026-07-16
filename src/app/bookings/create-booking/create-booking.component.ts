@@ -16,6 +16,7 @@ export class CreateBookingComponent implements OnInit {
 
   onBookPlace() {
     this.modelCtrl.dismiss({ message: 'This is a dummy message!' }, 'confirm');
+    console.log(this.selectedPlace);
   }
 
   onCancel() {
