@@ -21,7 +21,7 @@ export class PlaceDetailPage implements OnInit {
     private placeService: PlacesService,
     private navCtrl: NavController,
     private modalCtrl: ModalController,
-    private actionSheetCtrl: ActionSheetController
+    private actionSheetCtrl: ActionSheetController,
   ) {}
 
   ngOnInit() {
@@ -74,7 +74,7 @@ export class PlaceDetailPage implements OnInit {
         //componentProps: permite passar dados para a modal
         componentProps: {
           selectedPlace: this.place,
-          id: 1,
+          selectedMode: mode,
         },
       })
       .then((modelEl) => {

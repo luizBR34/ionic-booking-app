@@ -9,10 +9,26 @@ import { Place } from '../../places/place.model';
 })
 export class CreateBookingComponent implements OnInit {
   @Input() selectedPlace!: Place;
+  @Input() selectedMode?: 'select' | 'random';
+  startDate?: Date;
+  endDate?: Date;
 
   constructor(private modelCtrl: ModalController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const availableFrom = new Date(this.selectedPlace.availableFrom!);
+    const availableTo = new Date(this.selectedPlace.availableTo!);
+
+    if (this.selectedMode === 'random') {
+      this.startDate = new Date(
+        availableFrom.getTime() +
+          Math.random() *
+            (availableTo.getTime() -
+              7 * 24 * 60 * 60 * 1000 -
+              availableFrom.getTime()),
+      );
+    }
+  }
 
   onBookPlace() {
     this.modelCtrl.dismiss({ message: 'This is a dummy message!' }, 'confirm');

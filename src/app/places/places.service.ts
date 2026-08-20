@@ -11,14 +11,18 @@ export class PlacesService {
       'Manhattan Mansion',
       'In the heart of New York City',
       'https://i.pinimg.com/736x/92/e5/23/92e523508d62fa1b1ab2344ab25ff006.jpg',
-      129.0
+      129.0,
+      new Date('2019-01-01'),
+      new Date('2019-02-01'),
     ),
     new Place(
       'p2',
       'Rio de Janeiro Apartment',
       'In the heart of Rio',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr1aOFsA17CjqioXKOEVvKkpz-jMuH50ZzDx-A_34-2g&s',
-      128.0
+      128.0,
+      new Date('2019-03-01'),
+      new Date('2019-04-01'),
     ),
 
     new Place(
@@ -26,7 +30,9 @@ export class PlacesService {
       'Paris Apartment',
       'In the heart of Paris',
       'https://worldinparis.com/wp-content/uploads/2021/03/Apartment-with-Eiffel-Tower-View-Paris.jpg',
-      132.0
+      132.0,
+      new Date('2019-05-01'),
+      new Date('2019-06-01'),
     ),
   ];
 
